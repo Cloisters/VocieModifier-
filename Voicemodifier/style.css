@@ -1,0 +1,197 @@
+/* Global Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+h1 {
+  color: #333;
+  font-size: 2.8em;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+  opacity: 0;
+  animation: fadeIn 1s 0.5s forwards;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 850px;
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  opacity: 0;
+  animation: slideUp 0.7s 1s forwards;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  margin: 0 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  opacity: 0;
+  animation: fadeIn 1s 1.5s forwards;
+}
+
+button:hover:not(:disabled) {
+  background-color: #0056b3;
+  transform: translateY(-4px);
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+input[type="range"] {
+  width: 80%;
+  max-width: 300px;
+  margin-right: 20px;
+  background-color: #e9ecef;
+  border-radius: 5px;
+  height: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+input[type="range"]:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.6);
+  transform: scale(1.1);
+}
+
+input[type="range"]:hover {
+  background-color: #007bff;
+}
+
+select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  cursor: pointer;
+  width: 200px;
+  transition: background-color 0.3s ease;
+}
+
+select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+#toggleEcho {
+  background-color: #28a745;
+  color: white;
+  opacity: 0;
+  animation: fadeIn 1s 1.7s forwards;
+}
+
+#toggleEcho:hover {
+  background-color: #218838;
+}
+
+#toggleEcho:active {
+  transform: scale(0.98);
+}
+
+/* Echo Settings */
+#echoDelayValue, #echoFeedbackValue {
+  margin-left: 15px;
+  font-weight: 600;
+  font-size: 16px;
+  opacity: 0;
+  animation: fadeIn 1s 2s forwards;
+}
+
+/* Recording Indicator */
+#recordingIndicator {
+  margin-top: 20px;
+  color: red;
+  font-weight: 600;
+  font-size: 18px;
+  opacity: 0;
+  animation: fadeIn 1s 2.5s forwards;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide-Up Animation */
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 25px 20px;
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  .control-group {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  label {
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  button {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  input[type="range"] {
+    width: 100%;
+  }
+
+  select {
+    width: 100%;
+  }
+}
